@@ -11,22 +11,35 @@
 
 <body>
     <!-- <label>Register</label> -->
-    <input type="text" id="UserNameTxt" placeholder="New Here?... add your Name">
-    <button id="AddUserBtn">Register</button>
-    <select id="SelectUserName"></select>
-    <select id="SelectCatigories">
-        <option>General</option>
-    </select>
-    <select id="SelectDifficulty">
-        <option>Random</option>
-        <option>Easy</option>
-        <option>Medium</option>
-        <option>Hard</option>
-    </select>
+    <div>
+        <p>Add Your Name</p>
+        <input type="text" id="UserNameTxt" placeholder="New Here?... add your Name">
+        <button id="AddUserBtn">Register</button>
+    </div>
+    <div>
+        <p>Select Your Name</p>
+        <select id="SelectUserName"></select>
+    </div>
+    <div>
+        <p>Select Subject</p>
+        <select id="SelectCatigories">
+            <option>General</option>
+        </select>
+    </div>
+    <div>
+        <p>Select Difficulty</p>
+        <select id="SelectDifficulty">
+            <option>Random</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+        </select>
+    </div>
     <table id="QuestionsTable"></table>
     <button id="Start">Begin Quiz</button>
+    <p>Made By: Mahmoud Zakaria | Powered By: quizapi.io</p>
     <script src='main.js'></script>
-    powered by: quizapi.io
+    
 
 </body>
 

@@ -12,7 +12,7 @@ let usersList = document.getElementById("SelectUserName");
 let newUsrTxt = document.getElementById("UserNameTxt");
 
 var savedUsers = localStorage.getItem("Users");
-if (savedUsers != null) { }
+if (savedUsers != null && savedUsers.length != 0) { }
 else {
     savedUsers = ["Mahmoud Zakaria Mahmoud Taha Noureldin"];
     localStorage.setItem("Users", savedUsers.toString());
