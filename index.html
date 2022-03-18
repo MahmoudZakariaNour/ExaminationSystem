@@ -4,30 +4,30 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Examination System</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 
 <body>
-    <!-- <label>Register</label> -->
-    <div>
-        <p>Add Your Name</p>
-        <input type="text" id="UserNameTxt" placeholder="New Here?... add your Name">
+    <img class="Logo" src="ExamLogo.webp" alt="">
+    <div class="container reg">
+        <h3>Add Your Name</h3>
+        <input type="text" id="UserNameTxt" placeholder="New Here?... add your Name"><br>
         <button id="AddUserBtn">Register</button>
     </div>
-    <div>
-        <p>Select Your Name</p>
+    <div class="container selectName">
+        <h3>Select Your Name</h3>
         <select id="SelectUserName"></select>
     </div>
-    <div>
-        <p>Select Subject</p>
+    <div class="container selectSub">
+        <h3>Select Subject</h3>
         <select id="SelectCatigories">
             <option>General</option>
         </select>
     </div>
-    <div>
-        <p>Select Difficulty</p>
+    <div class="container diffculty">
+        <h3>Select Difficulty</h3>
         <select id="SelectDifficulty">
             <option>Random</option>
             <option>Easy</option>
@@ -35,11 +35,13 @@
             <option>Hard</option>
         </select>
     </div>
-    <table id="QuestionsTable"></table>
-    <button id="Start">Begin Quiz</button>
-    <p>Made By: Mahmoud Zakaria | Powered By: quizapi.io</p>
+    <div>
+        <button id="Start">Begin Quiz</button>
+    </div>
+    <p id="Owner">Made By: Mahmoud Zakaria | Powered By: quizapi.io</p>
+
     <script src='main.js'></script>
-    
+
 
 </body>
 

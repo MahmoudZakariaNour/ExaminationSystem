@@ -14,8 +14,12 @@ let newUsrTxt = document.getElementById("UserNameTxt");
 var savedUsers = localStorage.getItem("Users");
 if (savedUsers != null && savedUsers.length != 0) { }
 else {
-    savedUsers = ["Mahmoud Zakaria Mahmoud Taha Noureldin"];
-    localStorage.setItem("Users", savedUsers.toString());
+        savedUsers = [];
+        newUsrTxt.value  = ["Mahmoud Zakaria Mahmoud Taha Noureldin"];
+        addUser();
+        newUsrTxt.value = "";
+    // savedUsers = ["Mahmoud Zakaria Mahmoud Taha Noureldin"];
+    // localStorage.setItem("Users", savedUsers.toString());
 }
 savedUsers = savedUsers.split(',');
 savedUsers.forEach(us => {

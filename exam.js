@@ -15,7 +15,7 @@ const answersLabels = document.getElementsByName("answersLbl");
 const selectedCategory = sessionStorage.getItem("Category");
 const LoggedUser = sessionStorage.getItem("User");
 const selectedDifficulty = sessionStorage.getItem("Difficulty");
-
+const lastGrade = sessionStorage.getItem(LoggedUser);
 let requestURL = 'https://quizapi.io/api/v1/questions?apiKey=CjpszrbUynVKWrkVQXbT681Dj4jfNNf3z5hNwMCF&limit=20';
 let examJSON;
 let timerInterval;
@@ -233,13 +233,17 @@ function FinishExam() {
             }
 
         }
-        gradeLbl.innerText = `Grade is ${grade} out of 20 (${Math.floor(grade/20*100)}%)`;
+        gradeLbl.innerText = `Grade is ${grade} out of 20 (${Math.floor(grade / 20 * 100)}%)`;
         if (grade > 9) {
             userLbl.style.backgroundColor = "green";
         } else {
             userLbl.style.backgroundColor = "red";
 
         }
+        if (lastGrade) {
+            gradeLbl.innerText += `, Your Last Grade is ${lastGrade}`;
+        }
+        sessionStorage.setItem(LoggedUser,grade);
         console.log(`Grade is ${grade} out of 20`);
     }
 }
@@ -288,7 +292,13 @@ function TimerTick() {
     remainingTime--;
     let remMin = Math.floor(remainingTime / 60);
     let remSec = remainingTime % 60;
-    timerLbl.innerText = `${remMin}:${remSec}`;
+    if (remSec > 9) {
+
+        timerLbl.innerText = `0${remMin}:${remSec}`;
+    } else {
+        timerLbl.innerText = `0${remMin}:0${remSec}`;
+
+    }
     if (remainingTime < 1) {
         FinishExam();
     }
